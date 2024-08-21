@@ -29,7 +29,9 @@ export default function Signup() {
           />
 
           <Checkbox text="I agree to the Terms &amp; Conditions" />
-          <Button>Submit now</Button>
+          <Button>
+            <span>Submit now</span>
+          </Button>
           <div className={classes.info}>
             Already have an account? <a href="#">Login</a> instead.
           </div>
