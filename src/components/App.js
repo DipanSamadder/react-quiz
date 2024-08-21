@@ -1,11 +1,12 @@
-import Quiz from "../components/pages/Quiz";
+// import Quiz from "../components/pages/Quiz";
 import "../styles/App.css";
 import Layout from "./layouts/Layout";
+import Result from "./pages/Result";
 
 function App() {
   return (
     <Layout>
-      <Quiz />
+      <Result />
     </Layout>
   );
 }
