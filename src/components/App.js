@@ -7,18 +7,22 @@ import Signup from "../components/pages/Signup";
 import "../styles/App.css";
 import Layout from "./layouts/Layout";
 
+import { AuthProvider } from "../contexts/AuthContext";
+
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/result" element={<Result />} />
-          <Route path="/quiz" element={<Quiz />} />
-        </Routes>
-      </Layout>
+      <AuthProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/result" element={<Result />} />
+            <Route path="/quiz" element={<Quiz />} />
+          </Routes>
+        </Layout>
+      </AuthProvider>
     </Router>
   );
 }
