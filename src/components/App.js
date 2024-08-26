@@ -4,10 +4,10 @@ import Login from "../components/pages/Login";
 import Quiz from "../components/pages/Quiz";
 import Result from "../components/pages/Result";
 import Signup from "../components/pages/Signup";
-import "../styles/App.css";
-import Layout from "./layouts/Layout";
-
 import { AuthProvider } from "../contexts/AuthContext";
+import "../styles/App.css";
+import PrivateRoute from "./inc/PrivateRoute";
+import Layout from "./layouts/Layout";
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/result" element={<Result />} />
-            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/result" element={<PrivateRoute element={Result} />} />
+            <Route path="/quiz" element={<PrivateRoute element={Quiz} />} />
           </Routes>
         </Layout>
       </AuthProvider>
